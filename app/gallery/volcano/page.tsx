@@ -1,0 +1,88 @@
+"use client";
+
+import Navigation from "../../components/Navigation";
+import Gallery from "../../components/Gallery";
+import Link from "next/link";
+
+export default function VolcanoGalleryPage() {
+  // List all media from the volcano folder
+  const items = [
+    { src: "/pic/volcano/PXL_20260327_134255565.webp", type: "image" as const },
+    { src: "/pic/volcano/PXL_20260401_170717086.webp", type: "image" as const },
+    { src: "/pic/volcano/PXL_20260401_171439615.MP.webp", type: "image" as const },
+    { src: "/pic/volcano/PXL_20260401_171641514.mp4", type: "video" as const },
+    { src: "/pic/volcano/PXL_20260401_174106020.mp4", type: "video" as const },
+    { src: "/pic/volcano/PXL_20260401_182547983.webp", type: "image" as const },
+    { src: "/pic/volcano/PXL_20260401_183056744.MP.webp", type: "image" as const },
+    { src: "/pic/volcano/PXL_20260401_192527708.webp", type: "image" as const },
+    { src: "/pic/volcano/PXL_20260401_192555881.MP.webp", type: "image" as const },
+    { src: "/pic/volcano/PXL_20260401_192723705.webp", type: "image" as const },
+    { src: "/pic/volcano/PXL_20260401_192738147.webp", type: "image" as const },
+    { src: "/pic/volcano/volcano_01.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_02.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_03.mp4", type: "video" as const },
+    { src: "/pic/volcano/volcano_04.mp4", type: "video" as const },
+    { src: "/pic/volcano/volcano_05.mp4", type: "video" as const },
+    { src: "/pic/volcano/volcano_06.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_06.mp4", type: "video" as const },
+    { src: "/pic/volcano/volcano_07.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_08.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_09.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_10.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_11.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_12.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_13.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_14.jpeg", type: "image" as const },
+    { src: "/pic/volcano/volcano_15.jpeg", type: "image" as const },
+  ];
+
+  return (
+    <>
+      <Navigation />
+      <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="mb-8">
+            <Link
+              href="/gallery"
+              className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold mb-4"
+            >
+              <span className="mr-2">←</span> Back to Gallery
+            </Link>
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+              🌋 Volcano Gallery
+            </h1>
+            <p className="text-xl text-gray-600">
+              Explore the majestic volcano landscapes of St Lucia
+            </p>
+          </div>
+
+          {/* Gallery Component */}
+          <Gallery items={items} />
+
+          {/* CTA Section */}
+          <div className="mt-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl p-8 shadow-xl text-white text-center">
+            <h2 className="text-2xl font-bold mb-4">Visit the Volcano</h2>
+            <p className="text-lg mb-6 text-blue-100">
+              Experience the wonder of St Lucia's volcanic landscapes with our guided tours
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/pricing"
+                className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+              >
+                View Pricing
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-block bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              >
+                Book a Tour
+              </Link>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}
