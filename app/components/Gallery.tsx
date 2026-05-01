@@ -24,12 +24,13 @@ export default function Gallery({ folderPath, title }: GalleryProps) {
   };
 
   useEffect(() => {
-    // Load media items from the folder
+    // Load media items from the static manifest
     const loadMedia = async () => {
       try {
-        const response = await fetch(`/api/gallery?folder=${encodeURIComponent(folderPath)}`);
+        const response = await fetch('/gallery-manifest.json');
         if (response.ok) {
-          const files = await response.json();
+          const manifest = await response.json();
+          const files = manifest[folderPath] || [];
           const mediaItems = files.map((file: string) => ({
             src: `/pic/${folderPath}/${file}`,
             type: isVideo(file) ? "video" : "image"
