@@ -5,38 +5,6 @@ import Gallery from "../../components/Gallery";
 import Link from "next/link";
 
 export default function BeachGalleryPage() {
-  // List all media from the beach folder
-  const items = [
-    { src: "/pic/beach/beach_01.jpeg", type: "image" as const },
-    { src: "/pic/beach/beach_02.jpeg", type: "image" as const },
-    { src: "/pic/beach/beach_03.jpeg", type: "image" as const },
-    { src: "/pic/beach/beach_04.jpeg", type: "image" as const },
-    { src: "/pic/beach/beach_05.jpeg", type: "image" as const },
-    { src: "/pic/beach/beach_06.jpeg", type: "image" as const },
-    { src: "/pic/beach/PXL_20260321_134514455.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260321_134520780.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260321_213259335.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260321_215450860.MP.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260321_220710383.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260321_221928421.MP.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260321_234731863.MP.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260322_100719552.MP.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260322_100723969.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260322_100727292.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260323_222135136.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260323_222644515.mp4", type: "video" as const },
-    { src: "/pic/beach/PXL_20260324_002927703.TS-000.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260325_002628161.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260325_002631488.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260326_223546721.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260326_230302250.mp4", type: "video" as const },
-    { src: "/pic/beach/PXL_20260326_230323788.MP.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260329_215100059.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260329_215102172.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260329_222307976.webp", type: "image" as const },
-    { src: "/pic/beach/PXL_20260329_222430059.mp4", type: "video" as const },
-  ];
-
   return (
     <>
       <Navigation />
@@ -59,7 +27,7 @@ export default function BeachGalleryPage() {
           </div>
 
           {/* Gallery Component */}
-          <Gallery items={items} />
+          <Gallery folderPath="beach" />
 
           {/* CTA Section */}
           <div className="mt-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl p-8 shadow-xl text-white text-center">

@@ -5,17 +5,6 @@ import Gallery from "../../components/Gallery";
 import Link from "next/link";
 
 export default function RiverGalleryPage() {
-  // List all media from the river folder
-  const items = [
-    { src: "/pic/river/PXL_20260329_172337799.MP.webp", type: "image" as const },
-    { src: "/pic/river/PXL_20260329_172339586.mp4", type: "video" as const },
-    { src: "/pic/river/PXL_20260329_172359831.MP.webp", type: "image" as const },
-    { src: "/pic/river/PXL_20260329_172457870.webp", type: "image" as const },
-    { src: "/pic/river/PXL_20260329_172519865.webp", type: "image" as const },
-    { src: "/pic/river/PXL_20260329_172524020.mp4", type: "video" as const },
-    { src: "/pic/river/PXL_20260329_172807410.webp", type: "image" as const },
-  ];
-
   return (
     <>
       <Navigation />
@@ -38,7 +27,7 @@ export default function RiverGalleryPage() {
           </div>
 
           {/* Gallery Component */}
-          <Gallery items={items} />
+          <Gallery folderPath="river" />
 
           {/* CTA Section */}
           <div className="mt-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl p-8 shadow-xl text-white text-center">

@@ -5,12 +5,6 @@ import Gallery from "../../components/Gallery";
 import Link from "next/link";
 
 export default function DivingGalleryPage() {
-  // List all media from the diving folder
-  const items = [
-    { src: "/pic/diving/diving_01.jpeg", type: "image" as const },
-    { src: "/pic/diving/diving_02.jpeg", type: "image" as const },
-  ];
-
   return (
     <>
       <Navigation />
@@ -33,7 +27,7 @@ export default function DivingGalleryPage() {
           </div>
 
           {/* Gallery Component */}
-          <Gallery items={items} />
+          <Gallery folderPath="diving" />
 
           {/* CTA Section */}
           <div className="mt-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl p-8 shadow-xl text-white text-center">

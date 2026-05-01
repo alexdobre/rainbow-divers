@@ -9,17 +9,42 @@ interface MediaItem {
 }
 
 interface GalleryProps {
-  items: MediaItem[];
+  folderPath: string;
   title?: string;
 }
 
-export default function Gallery({ items, title }: GalleryProps) {
+export default function Gallery({ folderPath, title }: GalleryProps) {
+  const [items, setItems] = useState<MediaItem[]>([]);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const isVideo = (src: string) => {
-    return src.match(/\.(mp4|webm|ogg|mov)$/i) !== null;
+  const isVideo = (filename: string) => {
+    return filename.match(/\.(mp4|webm|ogg|mov)$/i) !== null;
   };
+
+  useEffect(() => {
+    // Load media items from the folder
+    const loadMedia = async () => {
+      try {
+        const response = await fetch(`/api/gallery?folder=${encodeURIComponent(folderPath)}`);
+        if (response.ok) {
+          const files = await response.json();
+          const mediaItems = files.map((file: string) => ({
+            src: `/pic/${folderPath}/${file}`,
+            type: isVideo(file) ? "video" : "image"
+          }));
+          setItems(mediaItems);
+        }
+      } catch (error) {
+        console.error("Error loading media:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadMedia();
+  }, [folderPath]);
 
   const openLightbox = (index: number) => {
     setCurrentIndex(index);
@@ -54,6 +79,15 @@ export default function Gallery({ items, title }: GalleryProps) {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedIndex, currentIndex, items.length]);
+
+  if (isLoading) {
+    return (
+      <div className="text-center py-12">
+        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+        <p className="text-gray-600 mt-4">Loading gallery...</p>
+      </div>
+    );
+  }
 
   if (items.length === 0) {
     return (

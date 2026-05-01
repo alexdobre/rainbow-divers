@@ -4,6 +4,12 @@ import Link from "next/link";
 export default function GalleryPage() {
   const galleries = [
     {
+      name: "Diving",
+      description: "Explore underwater wonders",
+      href: "/gallery/diving",
+      emoji: "🤿"
+    },
+    {
       name: "Volcano",
       description: "Explore the majestic volcano landscapes",
       href: "/gallery/volcano",
@@ -26,12 +32,6 @@ export default function GalleryPage() {
       description: "Relax on pristine Caribbean beaches",
       href: "/gallery/beach",
       emoji: "🏖️"
-    },
-    {
-      name: "Diving",
-      description: "Explore underwater wonders",
-      href: "/gallery/diving",
-      emoji: "🤿"
     },
     {
       name: "River",

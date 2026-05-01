@@ -5,37 +5,6 @@ import Gallery from "../../components/Gallery";
 import Link from "next/link";
 
 export default function VolcanoGalleryPage() {
-  // List all media from the volcano folder
-  const items = [
-    { src: "/pic/volcano/PXL_20260327_134255565.webp", type: "image" as const },
-    { src: "/pic/volcano/PXL_20260401_170717086.webp", type: "image" as const },
-    { src: "/pic/volcano/PXL_20260401_171439615.MP.webp", type: "image" as const },
-    { src: "/pic/volcano/PXL_20260401_171641514.mp4", type: "video" as const },
-    { src: "/pic/volcano/PXL_20260401_174106020.mp4", type: "video" as const },
-    { src: "/pic/volcano/PXL_20260401_182547983.webp", type: "image" as const },
-    { src: "/pic/volcano/PXL_20260401_183056744.MP.webp", type: "image" as const },
-    { src: "/pic/volcano/PXL_20260401_192527708.webp", type: "image" as const },
-    { src: "/pic/volcano/PXL_20260401_192555881.MP.webp", type: "image" as const },
-    { src: "/pic/volcano/PXL_20260401_192723705.webp", type: "image" as const },
-    { src: "/pic/volcano/PXL_20260401_192738147.webp", type: "image" as const },
-    { src: "/pic/volcano/volcano_01.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_02.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_03.mp4", type: "video" as const },
-    { src: "/pic/volcano/volcano_04.mp4", type: "video" as const },
-    { src: "/pic/volcano/volcano_05.mp4", type: "video" as const },
-    { src: "/pic/volcano/volcano_06.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_06.mp4", type: "video" as const },
-    { src: "/pic/volcano/volcano_07.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_08.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_09.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_10.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_11.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_12.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_13.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_14.jpeg", type: "image" as const },
-    { src: "/pic/volcano/volcano_15.jpeg", type: "image" as const },
-  ];
-
   return (
     <>
       <Navigation />
@@ -58,7 +27,7 @@ export default function VolcanoGalleryPage() {
           </div>
 
           {/* Gallery Component */}
-          <Gallery items={items} />
+          <Gallery folderPath="volcano" />
 
           {/* CTA Section */}
           <div className="mt-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl p-8 shadow-xl text-white text-center">

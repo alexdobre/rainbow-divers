@@ -5,22 +5,6 @@ import Gallery from "../../components/Gallery";
 import Link from "next/link";
 
 export default function TrailGalleryPage() {
-  // List all media from the trail folder
-  const items = [
-    { src: "/pic/trail/PXL_20260327_134839288.MP.webp", type: "image" as const },
-    { src: "/pic/trail/PXL_20260402_163910146.MP.webp", type: "image" as const },
-    { src: "/pic/trail/PXL_20260402_164716906.webp", type: "image" as const },
-    { src: "/pic/trail/PXL_20260402_164741198.webp", type: "image" as const },
-    { src: "/pic/trail/PXL_20260402_164920577.webp", type: "image" as const },
-    { src: "/pic/trail/PXL_20260402_165433227.MP.webp", type: "image" as const },
-    { src: "/pic/trail/PXL_20260402_165436093.mp4", type: "video" as const },
-    { src: "/pic/trail/PXL_20260402_165600976.webp", type: "image" as const },
-    { src: "/pic/trail/PXL_20260402_170519560.webp", type: "image" as const },
-    { src: "/pic/trail/PXL_20260402_171341121.MP.webp", type: "image" as const },
-    { src: "/pic/trail/PXL_20260402_172628579.webp", type: "image" as const },
-    { src: "/pic/trail/PXL_20260402_173325165.webp", type: "image" as const },
-  ];
-
   return (
     <>
       <Navigation />
@@ -43,7 +27,7 @@ export default function TrailGalleryPage() {
           </div>
 
           {/* Gallery Component */}
-          <Gallery items={items} />
+          <Gallery folderPath="trail" />
 
           {/* CTA Section */}
           <div className="mt-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl p-8 shadow-xl text-white text-center">

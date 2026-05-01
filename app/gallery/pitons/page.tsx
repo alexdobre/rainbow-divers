@@ -5,15 +5,6 @@ import Gallery from "../../components/Gallery";
 import Link from "next/link";
 
 export default function PitonsGalleryPage() {
-  // List all media from the pitons folder
-  const items = [
-    { src: "/pic/pitons/pitons_01.jpeg", type: "image" as const },
-    { src: "/pic/pitons/pitons_02.jpeg", type: "image" as const },
-    { src: "/pic/pitons/pitons_03.jpeg", type: "image" as const },
-    { src: "/pic/pitons/pitons_04.jpeg", type: "image" as const },
-    { src: "/pic/pitons/pitons_05.jpeg", type: "image" as const },
-  ];
-
   return (
     <>
       <Navigation />
@@ -36,7 +27,7 @@ export default function PitonsGalleryPage() {
           </div>
 
           {/* Gallery Component */}
-          <Gallery items={items} />
+          <Gallery folderPath="pitons" />
 
           {/* CTA Section */}
           <div className="mt-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl p-8 shadow-xl text-white text-center">

@@ -5,30 +5,6 @@ import Gallery from "../../components/Gallery";
 import Link from "next/link";
 
 export default function WaterfallsGalleryPage() {
-  // List all media from the waterfalls folder
-  const items = [
-    { src: "/pic/waterfalls/PXL_20260327_212954298.webp", type: "image" as const },
-    { src: "/pic/waterfalls/PXL_20260327_213247747.MP.jpg", type: "image" as const },
-    { src: "/pic/waterfalls/PXL_20260327_213854020.mp4", type: "video" as const },
-    { src: "/pic/waterfalls/PXL_20260411_195556225.MP.jpg", type: "image" as const },
-    { src: "/pic/waterfalls/PXL_20260411_195632944.mp4", type: "video" as const },
-    { src: "/pic/waterfalls/PXL_20260411_195723696.mp4", type: "video" as const },
-    { src: "/pic/waterfalls/PXL_20260411_195755813.jpg", type: "image" as const },
-    { src: "/pic/waterfalls/PXL_20260411_195825733.MP.jpg", type: "image" as const },
-    { src: "/pic/waterfalls/PXL_20260411_195831414.mp4", type: "video" as const },
-    { src: "/pic/waterfalls/PXL_20260411_195909088.webp", type: "image" as const },
-    { src: "/pic/waterfalls/PXL_20260411_200014740.mp4", type: "video" as const },
-    { src: "/pic/waterfalls/PXL_20260411_200539389.jpg", type: "image" as const },
-    { src: "/pic/waterfalls/waterfalls_01.jpeg", type: "image" as const },
-    { src: "/pic/waterfalls/waterfalls_02.jpeg", type: "image" as const },
-    { src: "/pic/waterfalls/waterfalls_03.jpeg", type: "image" as const },
-    { src: "/pic/waterfalls/waterfalls_04.jpeg", type: "image" as const },
-    { src: "/pic/waterfalls/waterfalls_05.jpeg", type: "image" as const },
-    { src: "/pic/waterfalls/waterfalls_06.jpeg", type: "image" as const },
-    { src: "/pic/waterfalls/waterfalls_06.mp4", type: "video" as const },
-    { src: "/pic/waterfalls/waterfalls_07.jpeg", type: "image" as const },
-  ];
-
   return (
     <>
       <Navigation />
@@ -51,7 +27,7 @@ export default function WaterfallsGalleryPage() {
           </div>
 
           {/* Gallery Component */}
-          <Gallery items={items} />
+          <Gallery folderPath="waterfalls" />
 
           {/* CTA Section */}
           <div className="mt-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl p-8 shadow-xl text-white text-center">
